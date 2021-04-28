@@ -1,10 +1,14 @@
 import os
+import logging
 from flask import Flask
 
 app = Flask(__name__)
+logging.basicConfig(level=logging.DEBUG)
+
 
 @app.route('/')
 def hello():
-	return "Welcome to the Women's National Team!"
+	logging.debug("Saying Hello")
+	return "Welcome to WNT!"
 
 

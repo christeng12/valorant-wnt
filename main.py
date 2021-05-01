@@ -1,6 +1,15 @@
 import os
 import logging
 from flask import Flask, url_for, render_template, request
+import riotwatcher
+from riotwatcher import RiotWatcher, ValWatcher, ApiError
+
+#  Static variables 
+players = {"1":["WNT BigFella","WNT"]} # hardcoded, will retrieve dynamically from api later
+api_key = "RGAPI-8e778b66-f617-4e3c-8f90-2ef6c5a7379e"
+region = "na"
+accWatcher = RiotWatcher(api_key)
+valWatcher = ValWatcher(api_key)
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -14,4 +23,6 @@ def hello():
 @app.route('/members')
 def members():
 	logging.debug("Displaying members")
+	content = accWatcher.account.by_riot_id(region,players["1"][0],players["1"][1])
+	logging.debug(content)
 	return render_template("members.html")		

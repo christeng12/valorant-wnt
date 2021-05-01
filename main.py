@@ -6,7 +6,7 @@ from riotwatcher import RiotWatcher, ValWatcher, ApiError
 #  Static variables 
 players = {"1":["WNT BigFella","WNT"]} # hardcoded, will retrieve dynamically from api later
 region = "na"
-api_key = ""
+api_key = "RGAPI-8e778b66-f617-4e3c-8f90-2ef6c5a7379e"
 accWatcher = RiotWatcher(api_key)
 valWatcher = ValWatcher(api_key)
 

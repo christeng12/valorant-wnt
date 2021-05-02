@@ -1,5 +1,4 @@
 import os
-from boto.s3.connection import S3Connection
 import logging
 from flask import Flask, url_for, render_template, request
 from riotwatcher import RiotWatcher, ValWatcher, ApiError
@@ -7,7 +6,7 @@ from riotwatcher import RiotWatcher, ValWatcher, ApiError
 #  Static variables 
 players = {"1":["WNT BigFella","WNT"]} # hardcoded, will retrieve dynamically from api later
 region = "americas"
-api_key = S3Connection(os.environ['API_KEY'])
+api_key = os.environ.get('API_KEY')
 accWatcher = RiotWatcher(api_key)
 valWatcher = ValWatcher(api_key)
 

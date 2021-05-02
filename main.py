@@ -1,18 +1,13 @@
 import os
-import os
-from dotenv import load_dotenv
+from boto.s3.connection import S3Connection
 import logging
 from flask import Flask, url_for, render_template, request
 from riotwatcher import RiotWatcher, ValWatcher, ApiError
 
-project_folder = os.path.expanduser('~/valorant-wnt')
-load_dotenv(os.path.join(project_folder, '.env'))
-
-
 #  Static variables 
 players = {"1":["WNT BigFella","WNT"]} # hardcoded, will retrieve dynamically from api later
 region = "americas"
-api_key = os.getenv("API_KEY")
+api_key = S3Connection(os.environ['API_KEY'])
 accWatcher = RiotWatcher(api_key)
 valWatcher = ValWatcher(api_key)
 

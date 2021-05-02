@@ -5,8 +5,11 @@ from riotwatcher import RiotWatcher, ValWatcher, ApiError
 
 #  Static variables 
 players = {"1":["WNT BigFella","WNT"]} # hardcoded, will retrieve dynamically from api later
-region = "na"
-api_key = "RGAPI-8e778b66-f617-4e3c-8f90-2ef6c5a7379e"
+region = "americas"
+path = "/Users/christeng/desktop/api_key.txt" #for security purposes
+f = open(path,"r")
+api_key = f.readline()
+f.close()
 accWatcher = RiotWatcher(api_key)
 valWatcher = ValWatcher(api_key)
 
@@ -22,6 +25,6 @@ def hello():
 @app.route('/members')
 def members():
 	logging.debug("Displaying members")
-	content = accWatcher.account.by_riot_id(region,players["1"][0],players["1"][1])
+	content = accWatcher.account.by_riot_id(region,"WNT BigFella","WNT")
 	logging.debug(content)
 	return render_template("members.html")		

@@ -1,13 +1,18 @@
 import os
-import config
+import os
+from dotenv import load_dotenv
 import logging
 from flask import Flask, url_for, render_template, request
 from riotwatcher import RiotWatcher, ValWatcher, ApiError
 
+project_folder = os.path.expanduser('~/valorant-wnt')
+load_dotenv(os.path.join(project_folder, '.env'))
+
+
 #  Static variables 
 players = {"1":["WNT BigFella","WNT"]} # hardcoded, will retrieve dynamically from api later
 region = "americas"
-api_key = config.api_key
+api_key = os.getenv("API_KEY")
 accWatcher = RiotWatcher(api_key)
 valWatcher = ValWatcher(api_key)
 

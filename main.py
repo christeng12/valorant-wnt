@@ -19,6 +19,10 @@ def hello():
 	logging.debug("Saying Hello")
 	return render_template("home.html")
 
+@app.route('/home')
+def home():
+	return render_template("home.html")
+
 @app.route('/members')
 def members():
 	logging.debug("Displaying members")

@@ -5,8 +5,14 @@
 
 <!doctype html>
 <html>
+	<head>
+		<link rel="stylesheet" href="~/static/css/navbar.css">
+	  </head>
 <body>
-	<li><a href="{{ url_for('members') }}">Members</a></li>
+	<div class="topnav">
+		<a class="active" href="{{ url_for('home')}}">Home</a>
+		<a href="{{ url_for('members')}}">Members</a>
+	</div>
 </body>
 </html>
 {% endblock %}

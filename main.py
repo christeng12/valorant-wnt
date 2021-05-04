@@ -14,7 +14,7 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
 
-@app.route('/')
+@app.route('/home')
 def hello():
 	logging.debug("Saying Hello")
 	return render_template("home.html")

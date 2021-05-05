@@ -5,8 +5,8 @@
 </head>
 <body>
 	<div class="topnav">
-		<a class={{ 'active' if active_page == 'home' else ''}} href="{{ url_for('home') }}">Home</a>
-		<a class={{ 'active' if active_page == 'members' else ''}} href="{{ url_for('members') }}">Members</a>
+		<a class={{ 'active' if active_page == 'home' else 'inactive'}} href="{{ url_for('home') }}">Home</a>
+		<a class={{ 'active' if active_page == 'members' else 'inactive'}} href="{{ url_for('members') }}">Members</a>
     </div>
 </body>
 </html>

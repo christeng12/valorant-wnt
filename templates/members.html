@@ -1,15 +1,9 @@
-<!doctype html>
-<html>
-	<head>
-		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	  </head>
-	<div id="navbar">
+{% extends 'base.html' %}
 
-	</div>
-	
-	<script>
-	$(function(){
-	  $("#navbar").load("nav.html");
-	});
-	</script>
+{% block app_content %}
+<div id="react-root"></div>
+  
+<script src="{{ url_for('static', filename='dist/bundle.js') }}"></script>
+
 </html>
+{% endblock %}

@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
+
+{% set active_page='home' %}
+<html>
 <div id="react-root"></div>
   
 <script src="{{ url_for('static', filename='dist/bundle.js') }}"></script>

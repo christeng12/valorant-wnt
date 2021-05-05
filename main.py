@@ -29,3 +29,7 @@ def members():
 	content = accWatcher.account.by_riot_id(region,"WNT BigFella","WNT")
 	logging.debug(content)
 	return render_template("members.html")		
+
+@app.route('/about_us')
+def about_us():
+	return render_template("about_us.html")

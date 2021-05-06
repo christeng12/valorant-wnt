@@ -2,13 +2,11 @@
 
 {% set active_page='home' %}
 
-{% block app_content %}
+{% block content %}
 
-<html>
 <div id="react-root"></div>
   
 <script src="{{ url_for('static', filename='dist/bundle.js') }}"></script>
 
-</html>
 {% endblock %}
 

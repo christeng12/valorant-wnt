@@ -4,6 +4,21 @@
 
 {% block content %}
 
+<style>
+@font-face {
+  font-family: 'VALORANT';
+  src: url('fonts/VALORANT-Regular.eot');
+  src: url('fonts/VALORANT-Regular.eot?#iefix') format('embedded-opentype'),
+      url('fonts/VALORANT-Regular.woff2') format('woff2'),
+      url('fonts/VALORANT-Regular.woff') format('woff'),
+      url('fonts/VALORANT-Regular.ttf') format('truetype'),
+      url('fonts/VALORANT-Regular.svg#VALORANT-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
+
 <div id="react-root"></div>
   
 <script src="{{ url_for('static', filename='dist/bundle.js') }}"></script>
@@ -11,7 +26,7 @@
 
 <div class="scoreboard">
 
-<p> {{ wins }} vs {{ losses }}</p>
+<p style="font-family: VALORANT"> {{ wins }} vs {{ losses }}</p>
 
 </div>
 {% endblock %}

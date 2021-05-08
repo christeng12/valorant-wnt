@@ -23,10 +23,6 @@ def home():
 	num_losses = 0
 	return render_template("home.html", wins=num_wins, losses=num_losses)
 
-"""
-def home():
-	return render_template("home.html")"""
-
 @app.route('/members')
 def members():
 	logging.debug("Displaying members")

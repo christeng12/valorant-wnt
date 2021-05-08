@@ -4,20 +4,7 @@
 
 {% block content %}
 
-<style>
-@font-face {
-  font-family: VALORANT;
-  src: url('fonts/VALORANT-Regular.eot');
-  src: url('fonts/VALORANT-Regular.eot?#iefix') format('embedded-opentype'),
-      url('fonts/VALORANT-Regular.woff2') format('woff2'),
-      url('fonts/VALORANT-Regular.woff') format('woff'),
-      url('fonts/VALORANT-Regular.ttf') format('truetype'),
-      url('fonts/VALORANT-Regular.svg#VALORANT-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-</style>
+<link type="text/css" rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}"/>
 
 <div id="react-root"></div>
   
@@ -26,7 +13,7 @@
 
 <div class="scoreboard">
 
-<p style="font-family: VALORANT"> {{ wins }} vs {{ losses }}</p>
+<p> {{ wins }} vs {{ losses }}</p>
 
 </div>
 {% endblock %}

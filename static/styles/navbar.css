@@ -30,9 +30,11 @@
   .topnav a.active {
     background-color: #fa4454;
     color: white;
+    font-family: VALORANT;
   }
 
   .topnav a.inactive{
     background-color: #333;
     color: white;  
+    font-family: VALORANT;
   }

@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 @app.route('/')
 @app.route('/home')
-def hello():
+def home():
 	logging.debug("Saying Hello")
 	num_wins = 5 # will pull from api later
 	num_losses = 0

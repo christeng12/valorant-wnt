@@ -1,5 +1,6 @@
 import os
 import logging
+import random
 from flask import Flask, url_for, render_template, request
 from riotwatcher import RiotWatcher, ValWatcher, ApiError
 
@@ -15,13 +16,16 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 @app.route('/')
+@app.route('/home')
 def hello():
 	logging.debug("Saying Hello")
-	return render_template("home.html")
+	num_wins = 5 # will pull from api later
+	num_losses = 0
+	return render_template("home.html", wins=num_wins, losses=num_losses)
 
-@app.route('/home')
+"""
 def home():
-	return render_template("home.html")
+	return render_template("home.html")"""
 
 @app.route('/members')
 def members():
